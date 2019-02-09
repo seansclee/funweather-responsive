@@ -114,7 +114,7 @@ html, body {
   
 .orange.bubble {
   top: 49%;
-  left: 5%;
+  left: 4%;
   width: 60px;
   height: 60px;
   border-radius: 30px;
@@ -127,7 +127,7 @@ html, body {
   
 .blue.bubble {
   top: 46%;
-  right: 5%;
+  right: 3%;
   width: 60px;
   height: 60px;
   border-radius: 30px;
@@ -140,7 +140,7 @@ html, body {
   
 .white.bubble {
   top: 25%;
-  right: 12%;
+  right: 11%;
   width: 38px;
   height: 38px;
   border-radius: 19px;
@@ -153,7 +153,7 @@ html, body {
   
 .yellow.bubble {
   top: 83%;
-  right: 10%;
+  right: 9%;
   width: 36px;
   height: 36px;
   border-radius: 17px;
