@@ -42,9 +42,9 @@ html, body {
 }
 
 #sub-header {
-  font-size: 14px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-size: 13px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 #features-header {
@@ -91,6 +91,11 @@ html, body {
   color: #565b87;
   text-align: right;
   font-size: 12px;
+}
+
+#graphics-container {
+  width: 400px;
+  height: auto;
 }
 
 .bg-custom-blue {
@@ -211,20 +216,11 @@ html, body {
   transform: translateY(-5px);
 }
 
-@media (min-width: 576px) { 
-  #main-header {
-    font-size: 50px;
-  }
-}
-
 @media (min-width: 768px) {
-  #main-header {
-    font-size: 60px;
-  }
   #sub-header {
-    font-size: 16px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 75%;
   }
   #features {
     padding-bottom: 340px;
@@ -240,7 +236,10 @@ html, body {
     height: auto;
   }
   #main-header {
-    font-size: 70px;
+    font-size: 54px;
+  }
+  #sub-header {
+    font-size: 14px;
   }
   .orange.bubble {
     width: 69px;
@@ -281,7 +280,7 @@ html, body {
     height: auto;
   }
   #main-header {
-    font-size: 80px;
+    font-size: 60px;
   }
   #sub-header {
     font-size: 18px;
@@ -319,8 +318,15 @@ html, body {
   }
 }
 
-@media (min-width: 1600px) {
-  .container-fluid { /* max site width 1600px */
+@media (min-width: 2000px) {
+  #main-header {
+    font-size: 72px;
+  }
+  #sub-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container-fluid { /* max site width 1600px (ultra-wide/4k resolutions) */
     width: 1600px;
   }
 }
