@@ -15,6 +15,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -58,39 +59,35 @@
     </nav>
 
     <!-- Banner -->
-    <div class="container-fluid" id="banner">
-        <div class="row">
-            <div class="jumbotron col-xs-12 col-sm-12 col-md-6 col-xl-6">
-                <h1 class="display-4" id="main-header">Get the most fun weather app</h1>
-                <p>Simple, nice and user-friendly application of the weather. Only useful information</p>
-                <button type="button" class="btn btn-secondary orange btn-lg">Download</button>
-                <button type="button" class="btn btn-secondary blue btn-lg">Features</button>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6">
-                <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-xl-2">
-                        <div class='orange bubble'>SUNNY</div>
-                    </div>
-                    <div class="text-center col-xs-8 col-sm-8 col-md-8 col-xl-8">
-                        <img src="assets/phone.png">
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-xl-2">
-                        <div class='white bubble'>9°</div>
-                        <div class='blue bubble'>LONDON</div>
-                        <div class='yellow bubble'>RIO</div>
-                    </div>
+    <div id="banner">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6">
+                    <h1 class="text-white" id="main-header">Get the most fun weather app</h1>
+                    <p class="text-white" id="sub-header">Simple, nice and user-friendly application of the weather. Only useful
+                        information</p>
+                    <button type="button" class="btn btn-secondary orange btn-lg">Download</button>
+                    <button type="button" class="btn btn-secondary blue btn-lg">Features</button>
+                </div>
+                <div class="text-center col-xs-12 col-sm-12 col-md-6 col-xl-6">
+                    <img src="assets/phone.png" id="phone">
+                    <div class="orange bubble">SUNNY</div>
+                    <div class="white bubble">9°</div>
+                    <div class="blue bubble">LONDON</div>
+                    <div class="yellow bubble">RIO</div>
                 </div>
             </div>
+            <div id="scroll-button"><i class="fas fa-angle-down"></i></div>
         </div>
     </div>
 
     <!-- Features -->
-    <div class="container-fluid">
-        <div class="text-center">
-            <h3 class="font-weight-bold custom-blue">PERFECT FEATURES</h3>
+    <div class="container-fluid" id="features-section">
+        <div class="text-center" id="features-header">
+            <h2 class="font-weight-bold custom-blue">PERFECT FEATURES</h2>
             <p class="custom-grey">Only necessary</p>
         </div>
-        <div class="row">
+        <div class="row" id="features">
             <div class="col-xs-12 col-sm-6 col-md-4 col-xl-4">
                 <div class="media">
                     <img class="align-self-start mr-3" src="assets/icon1.png">
@@ -168,8 +165,26 @@
                 </button>
             </div>
         </nav>
+    </div>
+    <div class="bg-custom-purple" id="footer-padding">
         <hr id="divider">
+        <p id="copyright">Weather App Theme by Sean Lee 2019</p>
+        <div id="scroll-button-up"><i class="fas fa-angle-up fa-2x"></i></div>
     </div>
 </body>
+
+<!-- JQuery -->
+<script>
+    $("#scroll-button").click(function () {
+        $("html,body").animate({
+            scrollTop: $("#features-section").offset().top
+        });
+    });
+    $("#scroll-button-up").click(function () { //sharing base selector classes for two scroll buttons causes bug, causes both functions to fire even though modifying selector class is specified, used ids instead with redundant styling i.e. .scroll-button.up causes both functions to fire
+        $("html,body").animate({
+            scrollTop: 0
+        });
+    });
+</script>
 
 </html>
