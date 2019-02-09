@@ -83,7 +83,6 @@ html, body {
   border-color: #434769;
 }
 
-
 #footer-padding {
   padding-top: 60px;
   padding-bottom: 50px;
@@ -98,7 +97,6 @@ html, body {
 }
 
 /* graphics, buttons, and animations */
-
 #phone {
   width: 200px;
   height: auto;
@@ -194,7 +192,7 @@ html, body {
 }
 
 #scroll-button:active {
-	background-color: lavender;
+  background-color: lavender;
 }
 
 #scroll-button-up { /*some redundancies with #scroll-button because using modifying selector causes JQuery bugs, see comment in index.html under 'JQuery'*/
@@ -223,7 +221,6 @@ html, body {
 }
 
 /* media queries */
-
 @media (min-width: 768px) { /* bootstrap medium ~ 'md' */
   #sub-header {
     padding-top: 16px;
