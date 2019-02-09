@@ -2,6 +2,7 @@ html, body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+/* colors */
 .custom-orange {
   color: #fc6a42;
 }
@@ -32,6 +33,15 @@ html, body {
   color: #353854
 }
 
+.bg-custom-blue {
+  background-color: #648cff;
+}
+
+.bg-custom-purple {
+  background-color: #353854;
+}
+
+/* page components */
 #banner {
   background: url('assets/wave.png') no-repeat center bottom;
   background-size: cover;
@@ -56,24 +66,8 @@ html, body {
   padding-bottom: 140px;
 }
 
-#graphics-container {
-  width: 400px;
-}
-
-#phone {
-  width: 200px;
-  height: auto;
-  padding-top: 85px; 
-  padding-bottom: 85px;
-  opacity: 0;
-  animation: fadein ease-in 1;
-  animation-fill-mode: forwards;
-  animation-duration: .5s;  
-  animation-delay: .5s;
-}
-
 #divider {
-  width: 95%;
+  width: 90%;
   border-color: #434769;
 }
 
@@ -90,20 +84,22 @@ html, body {
 #copyright {
   color: #565b87;
   text-align: right;
+  margin-right: 5%;
   font-size: 12px;
 }
 
-#graphics-container {
-  width: 400px;
+/* graphics, buttons, and animations */
+
+#phone {
+  width: 200px;
   height: auto;
-}
-
-.bg-custom-blue {
-  background-color: #648cff;
-}
-
-.bg-custom-purple {
-  background-color: #353854;
+  padding-top: 85px; 
+  padding-bottom: 85px;
+  opacity: 0;
+  animation: fadein ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;  
+  animation-delay: .5s;
 }
 
 .bubble {
@@ -113,6 +109,7 @@ html, body {
   animation-duration: .5s;
   text-align:center;
   position: absolute;
+  z-index: 1;
 }
   
 .orange.bubble {
@@ -125,7 +122,6 @@ html, body {
   color: white;
   line-height: 60px;
   background-color: #fc6a42;
-  z-index: 1;
   animation-delay: 1.5s;
 }
   
@@ -139,7 +135,6 @@ html, body {
   color: white;
   line-height: 60px;
   background-color: #4466c9;
-  z-index: 1;
   animation-delay: 2s;
 }
   
@@ -153,37 +148,34 @@ html, body {
   color: #6ca3ff;
   line-height: 38px;
   background-color: whitesmoke;
-  z-index: 1;
   animation-delay: 2.5s;
 }
   
 .yellow.bubble {
   top: 83%;
   right: 10%;
-  width:36px;
-  height:36px;
-  border-radius:17px;
-  font-size:12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 17px;
+  font-size: 12px;
   font-weight: bold;
   color: #9db0c5;
-  line-height:36px;
+  line-height: 36px;
   background-color: #fcec64;
-  z-index: 1;
   animation-delay: 3s;
 }
 
 #scroll-button {
   position: relative;
-  bottom:20px;
-  width:50px;
-  height:50px;
-  border-radius:25px;  
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;  
   color: orange;
-  line-height:50px;
-  text-align:center;
+  line-height: 50px;
+  text-align: center;
   background: white;
   margin: auto;
-  z-index: 1;
   cursor: pointer;
 }
 
@@ -195,7 +187,7 @@ html, body {
 	background-color: lavender;
 }
 
-#scroll-button-up { /*some redundancies with #scroll-button because using modifying selector causes JQuery bugs, see comment on script*/
+#scroll-button-up { /*some redundancies with #scroll-button because using modifying selector causes JQuery bugs, see comment in index.html under 'JQuery'*/
   position: relative;
   bottom:-70px;
   width:50px;
@@ -216,7 +208,14 @@ html, body {
   transform: translateY(-5px);
 }
 
-@media (min-width: 768px) {
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* media queries */
+
+@media (min-width: 768px) { /* bootstrap medium ~ 'md' */
   #sub-header {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -230,7 +229,7 @@ html, body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) { /* bootstrap large ~ 'lg' */
   #phone {
     width: 230px; /* 15% increase from base size, bubbles sized proportionally larger */
     height: auto;
@@ -274,7 +273,7 @@ html, body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) { /* bootstrap extra large ~ 'xl' */
   #phone {
     width: 260px; /* 30% increase from base size, bubbles sized proportionally larger */
     height: auto;
@@ -318,7 +317,7 @@ html, body {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 2000px) { /* for 1080p+ */
   #main-header {
     font-size: 72px;
   }
@@ -329,9 +328,4 @@ html, body {
   .container-fluid { /* max site width 1600px (ultra-wide/4k resolutions) */
     width: 1600px;
   }
-}
-  
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }

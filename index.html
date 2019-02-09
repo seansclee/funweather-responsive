@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-custom-blue">
         <div class="container-fluid">
@@ -64,9 +65,9 @@
             <div class="row align-items-center">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6">
                     <h1 class="text-white" id="main-header">Get the most fun weather app</h1>
-                    <p class="text-white" id="sub-header">Simple, nice and user-friendly application of the weather.
-                        Only useful
-                        information</p>
+                    <p class="text-white" id="sub-header">
+                        Simple, nice and user-friendly application of the weather. Only useful information
+                    </p>
                     <button type="button" class="btn btn-secondary orange btn-lg">Download</button>
                     <button type="button" class="btn btn-secondary blue btn-lg">Features</button>
                 </div>
@@ -172,6 +173,7 @@
         <p id="copyright">Weather App Theme by Sean Lee 2019</p>
         <div id="scroll-button-up"><i class="fas fa-angle-up fa-2x"></i></div>
     </div>
+
 </body>
 
 <!-- JQuery -->
@@ -181,11 +183,18 @@
             scrollTop: $("#features-section").offset().top
         });
     });
-    $("#scroll-button-up").click(function () { //sharing base selector classes for two scroll buttons causes bug, causes both functions to fire even though modifying selector class is specified, used ids instead with redundant styling i.e. .scroll-button.up causes both functions to fire
+    $("#scroll-button-up").click(function () {
         $("html,body").animate({
             scrollTop: 0
         });
     });
+    /*
+    sharing base selector classes for two scroll buttons causes bug,
+    causes both functions to fire even though modifying selector class
+    is specified, used ids instead, styling redundancies as a result
+
+    i.e. .scroll-button.up causes both functions to fire
+    */
 </script>
 
 </html>
